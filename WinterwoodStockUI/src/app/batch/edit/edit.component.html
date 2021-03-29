@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>Update Batch</h1>
+
+  <a href="#" routerLink="/batch/index" class="btn btn-primary">Back</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="batchId">Batch Id:</label>
+      <input
+        formControlName="batchId"
+        id="batchId"
+        type="text"
+        [readOnly]="true"
+        [(ngModel)]="batch.batchId"
+        class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="fruitType">Fruit Type:</label>
+      <input
+        formControlName="fruitType"
+        id="fruitType"
+        type="text"
+        [readOnly]="true"
+        [(ngModel)]="batch.fruitType"
+        class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="varietyType">Variety Type:</label>
+      <input
+        formControlName="varietyType"
+        id="varietyType"
+        type="text"
+        [readOnly]="true"
+        [(ngModel)]="batch.varietyType"
+        class="form-control">
+
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input
+        formControlName="quantity"
+        id="quantity"
+        type="number"
+        [(ngModel)]="batch.quantity"
+        class="form-control">
+      <div *ngIf="f.quantity.touched && f.quantity.invalid" class="alert alert-danger">
+        <div *ngIf="f.quantity.errors">Quantity is required.</div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+  </form>
+</div>

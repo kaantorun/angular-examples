@@ -1,0 +1,30 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" routerLink="/batch/create">Create Batch</a>
+    <a class="nav-item nav-link" routerLink="batch/index">View All Batches</a>
+    <a class="nav-item nav-link" routerLink="batch/stock">View All Stocks</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+    <!-- div class="row">
+      <div class="col-sm-6 offset-sm-3">
+
+      </div>
+    </div -->
+    <alert></alert>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- credits -->
+<div class="text-center">
+  <p>
+    <a href="https://www.winterwood.co.uk/" target="_top">winterwood.co.uk</a>
+  </p>
+</div>

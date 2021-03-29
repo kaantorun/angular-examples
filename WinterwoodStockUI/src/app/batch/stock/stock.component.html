@@ -1,0 +1,20 @@
+
+<div class="container">
+  <h1>Winterwood Stocks View</h1>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Batch Id</th>
+      <th>Fruit Type</th>
+      <th>Variety Type</th>
+      <th>Quantity</th>
+    </tr>
+
+    <tr *ngFor="let stock of stocks">
+      <td>{{ stock.stockId }}</td>
+      <td>{{ stock.fruitType }}</td>
+      <td>{{ stock.varietyType }}</td>
+      <td>{{ stock.quantity }}</td>
+    </tr>
+  </table>
+</div>
